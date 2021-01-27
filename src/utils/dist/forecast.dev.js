@@ -20,8 +20,9 @@ var forecast = function forecast(lat, lng, callback) {
       var _body$current = body.current,
           temperature = _body$current.temperature,
           feelslike = _body$current.feelslike,
-          weather_descriptions = _body$current.weather_descriptions;
-      callback(undefined, "".concat(weather_descriptions[0], ". It is currently ").concat(temperature, " degrees out. There is a ").concat(feelslike, "% chance of rain."));
+          weather_descriptions = _body$current.weather_descriptions,
+          humidity = _body$current.humidity;
+      callback(undefined, "".concat(weather_descriptions[0], ". It is currently ").concat(temperature, " degrees out. There is a ").concat(feelslike, "% chance of rain. Humidity is ").concat(humidity, "%"));
     }
   });
 };
