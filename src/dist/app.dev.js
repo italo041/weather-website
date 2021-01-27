@@ -12,7 +12,8 @@ var forecast = require('./utils/forecast');
 
 console.log(__dirname);
 console.log(path.join(__dirname, '../public'));
-var app = express(); // Define paths for express config
+var app = express();
+var port = process.env.PORT || 3000; // Define paths for express config
 
 var publicDirectoryPath = path.join(__dirname, '../public');
 var viewPath = path.join(__dirname, '../templates/views');
@@ -102,6 +103,6 @@ app.get('*', function (req, res) {
     name: 'Fernando Bejarano'
   });
 });
-app.listen(3000, function () {
-  console.log('Server is up on port 3000');
+app.listen(port, function () {
+  console.log('Server is up on port ' + port);
 });

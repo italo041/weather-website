@@ -10,7 +10,7 @@ weatherForm.addEventListener('submit', function (e) {
   var location = search.value;
   messageOne.textContent = 'Loading';
   messageTwo.textContent = '';
-  fetch("http://localhost:3000/weather?address=".concat(location)).then(function (response) {
+  fetch("/weather?address=".concat(location)).then(function (response) {
     response.json().then(function (data) {
       if (data.error) {
         messageOne.textContent = data.error;
